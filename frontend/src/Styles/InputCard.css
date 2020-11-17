@@ -1,0 +1,246 @@
+.InputCard {
+  position: absolute;
+  min-width: 800px;
+  min-height: 150px;
+  max-width: 1000px;
+  top: calc(50% - 175px);
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.InputCard:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  background: inherit;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+  filter: blur(5px);
+}
+
+.cardContent {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+input.inputBox {
+  width: 70%;
+  height: 18px;
+  opacity: 0.9;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+}
+
+.shortUrlBox {
+  height: 18px;
+  opacity: 0.9;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+  width: 30% !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.longUrlBox {
+  background: lightgray !important;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.titleHeader {
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 25px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.sendButton {
+  height: 18px;
+  opacity: 0.9;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+  background: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.sendButton:hover {
+  opacity: 1;
+}
+
+.created {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.responseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContainer {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 90%;
+  height: 100px;
+  background: white;
+  opacity: 0.8;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.createAnother {
+  height: 50px;
+  width: 25%;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+@media all and (min-width: 960px) and (max-width: 1024px) {
+  .InputCard {
+    min-width: 700px;
+    max-width: 900px;
+  }
+}
+
+@media all and (min-width: 801px) and (max-width: 959px) {
+  .InputCard {
+    min-width: 600px;
+    max-width: 700px;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 800px) {
+  .InputCard {
+    min-width: 500px;
+    max-width: 600px;
+    min-height: 250px;
+  }
+  .titleHeader {
+    margin-top: 20px;
+  }
+  .inputContainer {
+    flex-direction: column !important;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  input.inputBox {
+    width: 90% !important;
+  }
+}
+
+@media all and (min-width: 569px) and (max-width: 768px) {
+  .InputCard {
+    min-width: 500px;
+    max-width: 700px;
+    min-height: 250px;
+  }
+  .titleHeader {
+    margin-top: 20px;
+  }
+  .inputContainer {
+    flex-direction: column !important;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  input.inputBox {
+    width: 90% !important;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 568px) {
+  .InputCard {
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 250px;
+  }
+  .titleHeader {
+    margin-top: 20px;
+  }
+  .inputContainer {
+    flex-direction: column !important;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  input.inputBox {
+    width: 90% !important;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 480px) {
+  .InputCard {
+    min-width: 300px;
+    max-width: 450px;
+    min-height: 250px;
+  }
+  .titleHeader {
+    margin-top: 20px;
+  }
+  .inputContainer {
+    flex-direction: column !important;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  input.inputBox {
+    width: 80% !important;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 320px) {
+  .InputCard {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+  }
+  .titleHeader {
+    margin-top: 20px;
+  }
+  .inputContainer {
+    flex-direction: column !important;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  input.inputBox {
+    width: 80% !important;
+  }
+}
+
+.InputCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
