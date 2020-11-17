@@ -1,2 +1,4 @@
 # URL-Shortner
-Full stack code to shorten URLs
+Fullstack code using MERN to shorten URLs
+
+Full working Demo: https://smoolurl.web.app/
