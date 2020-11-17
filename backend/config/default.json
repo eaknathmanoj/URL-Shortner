@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "<your MongoURI>",
+    "baseUrl" : "<Your Base URL>" 
+}
