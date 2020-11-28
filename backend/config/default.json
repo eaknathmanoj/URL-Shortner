@@ -1,4 +1,5 @@
 {
     "mongoURI" : "<your MongoURI>",
-    "baseUrl" : "<Your Base URL>" 
+    "baseUrl" : "<Your Base URL>",
+    "webUrl" : "<Your Web UI URL"
 }
