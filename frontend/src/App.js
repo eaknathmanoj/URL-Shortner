@@ -1,14 +1,17 @@
 import './Styles/App.css';
-import Particles from './Components/Particles';
-import InputCard from './Components/InputCard';
-import Footer from './Components/Footer';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import PageNotFound from './Pages/PageNotFound';
 
 function App() {
   return (
     <div className="App">
-      <InputCard/>      
-      <Particles/>
-      <Footer/>
+      <Router>
+        <Switch>
+          <Route exact path={['/']} component={HomePage}/>
+          <Route component={PageNotFound}/>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -9,10 +9,3 @@ html {
   height: 100vh;
 }
 
-.App {
-  background-color: #1b2845;
-  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

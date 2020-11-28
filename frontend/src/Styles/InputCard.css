@@ -244,3 +244,9 @@ input.inputBox {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.error{
+  color: red;
+  font-weight: 600;
+  margin-right: 10%;
+}

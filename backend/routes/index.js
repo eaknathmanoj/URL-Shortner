@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
-
+const config = require('config');
 const Url = require('../models/url');
 
 //@route    GET /:code
 //@desc     Redirect to Original URL
 router.get('/:code', async(req,res)=>{
     try {
-        const url = await Url.findOne({urlCode : req.params.code});
+        const query = {urlCode : req.params.code};
+        const url = await Url.findOneAndUpdate(
+            query,
+            {$set: {lastOpened: new Date()}},
+        );
         if(url){
             return res.redirect(url.longUrl);
         }else{
-            return res.status(404).json('No URL found');
+            const webUrl = config.get('webUrl');
+            return res.redirect(`${webUrl}/404`);
         }
     } catch (error) {
         console.log(error);

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState,useRef} from 'react';
 import '../Styles/InputCard.css';
 import '../Styles/button.scss';
 import {makePOSTCall } from '../Utils/Functions';
@@ -12,11 +12,16 @@ function InputCard() {
     const [open, setOpen] = useState(false);
     const [loader, setLoader] = useState(false);
 
+    const snackBarMsg = useRef(null);
+    const isError = useRef(false);
     const inputPlaceholder = "Paste an URL to make it smool..";
+
     const postURL = ()=>{
-        if(!!!inputUrl){
-            console.log("empty");
-            return;
+        if(!!!inputUrl || !isValidURL()){
+            snackBarMsg.current = "Please enter a valid URL."
+            isError.current = true;
+            setOpen(true);
+            return
         }
         const postData = {
             "longUrl" : inputUrl
@@ -34,6 +39,12 @@ function InputCard() {
         })
     }
 
+    const isValidURL = () =>{
+        const regexString = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+        const regex = new RegExp(regexString);
+        return (regex.test(inputUrl));
+    }
+
     const copyToClipboard = () => {
         var dummy = document.createElement("textarea");
         document.body.appendChild(dummy);
@@ -41,6 +52,8 @@ function InputCard() {
         dummy.select();
         document.execCommand("copy");
         document.body.removeChild(dummy);
+        snackBarMsg.current = "SmoolURL copied to clipboard.";
+        isError.current = false;
         setOpen(true);
     }
 
@@ -127,11 +140,12 @@ function InputCard() {
                     horizontal: 'left',
                 }}
                 open={open}
-                autoHideDuration={3000}
+                autoHideDuration={5000}
                 onClose={handleClose}
-                message="SmoolURL copied to clipboard."
+                message={snackBarMsg.current}
                 action={
                     <React.Fragment>
+                        {isError.current && <p className="error">Error</p>}
                         <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
                             <CloseIcon fontSize="small" />
                         </IconButton>

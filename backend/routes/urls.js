@@ -33,7 +33,8 @@ router.post('/shorten', async (req,res)=>{
                     longUrl,
                     shortUrl,
                     urlCode,
-                    date: new Date()
+                    createdDate: new Date(),
+                    lastOpened: new Date()
                 });
 
                 await url.save();
